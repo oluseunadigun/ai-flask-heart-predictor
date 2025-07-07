@@ -3,19 +3,19 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 import joblib
 
-	# Load dataset
-	df = pd.read_csv('heart.csv')  #from Kaggle: Heart Disease UCI Dataset
+# Load dataset
+df = pd.read_csv('heart.csv')  #from Kaggle: Heart Disease UCI Dataset
 
-	# Prepare data
-	X = df.drop('target', axis=1)
-	y = df['target']
+# Prepare data
+X = df.drop('target', axis=1)
+y = df['target']
 
-	# Split data
-	X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# Split data
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-	# Build model
-	model = RandomForestClassifier(random_state=42)
-	model.fit(X_train, y_train)
+# Build model
+model = RandomForestClassifier(random_state=42)
+model.fit(X_train, y_train)
 
-	# Save model
-	joblib.dump(model, 'heart_disease_model.pkl')
+# Save model
+joblib.dump(model, 'heart_disease_model.pkl')
